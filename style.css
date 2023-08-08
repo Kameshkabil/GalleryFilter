@@ -1,0 +1,129 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Inter',sans-serif;
+}
+html{
+    font-size: 22px;
+}
+body{
+    background-color:white;
+    padding:1rem;
+}
+.box{
+    height: 8rem;
+    border: 5px solid white;
+    overflow: hidden;
+}
+.box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    object-fit: cover;
+    transition: 0.5s;
+    transform-origin: top;
+}
+.box img:hover{
+    transform: scale(1.5);
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1rem;
+}
+.control{
+    max-width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    padding:10px 0px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.btn-group button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color:white;
+    color: blue;
+    margin: 5px;
+    font-size: 0.7rem;
+    border: 1px solid blue;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 5px;
+    text-align:center;
+    border-radius: 50px;
+    font-weight: bold;
+}
+.btn-group button:hover,
+.btn-group .btn-clicked{
+    background-color:blue;
+    color: white;
+}
+
+.preview-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #fff;
+    max-width: 700px;
+    width: 100%;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 3px;
+    padding: 0 5px 5px 5px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+  }
+  .preview-box.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.3s ease;
+  }
+  .preview-box .details{
+    padding: 13px 15px 13px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .details .title{
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .details .title p{
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  .details .icon{
+    color: #353b48;
+    font-style: 22px;
+    cursor: pointer;
+  }
+  .preview-box .image-box{
+    width: 100%;
+    display: flex;
+  }
+  .image-box img{
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+  }
+  .shadow{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: none;
+    background: rgba(0,0,0,0.4);
+  }
+  .shadow.show{
+    display: block;
+  }
